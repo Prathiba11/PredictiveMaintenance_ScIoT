@@ -16,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
     public static TextView plugwiseData;
     public static Button led_on1, led_on2, led_off1, led_off2, fetch_plugwise;
     public static ImageView led_state1, led_state2;
-    Socket myAppSocket = null;
+    /*Socket myAppSocket = null;
     public static String wifiModuleIp = "";
-    public static int wifiModulePort = 0;
+    public static int wifiModulePort = 0;*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
