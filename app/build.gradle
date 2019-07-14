@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    useLibrary 'org.apache.http.legacy'
+    //useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "com.example.smartled"
         minSdkVersion 27
