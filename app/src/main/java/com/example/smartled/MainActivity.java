@@ -70,11 +70,14 @@ public class MainActivity extends AppCompatActivity {
                                 }
                             });
                             backgroundWorker.execute();
+                           // PowerRead pR=new PowerRead();
+                           // pR.execute("1");
+
                         }
                     });
                 }
             };
-            timer.schedule(task, 0, 5000);
+            timer.schedule(task, 0, 50000);
             }
         });
 
@@ -82,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
               SocketAsyncTask led_on = new SocketAsyncTask();
-              led_on.execute("1");
+
+              led_on.execute("11");
               int imageResource = getResources().getIdentifier("@drawable/led_green", null, getApplicationContext().getPackageName());
               led_state1.setImageResource(imageResource);
             }
@@ -93,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
             SocketAsyncTask led_off = new SocketAsyncTask();
-            led_off.execute("0");
+            led_off.execute("10");
             int imageResource = getResources().getIdentifier("@drawable/led_white", null, getApplicationContext().getPackageName());
             led_state1.setImageResource(imageResource);
             }
@@ -103,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SocketAsyncTask led_on = new SocketAsyncTask();
-                led_on.execute("1");
+                led_on.execute("21");
                 int imageResource = getResources().getIdentifier("@drawable/led_green", null, getApplicationContext().getPackageName());
                 led_state2.setImageResource(imageResource);
             }
@@ -114,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 SocketAsyncTask led_off = new SocketAsyncTask();
-                led_off.execute("0");
+                led_off.execute("20");
                 int imageResource = getResources().getIdentifier("@drawable/led_white", null, getApplicationContext().getPackageName());
                 led_state2.setImageResource(imageResource);
             }

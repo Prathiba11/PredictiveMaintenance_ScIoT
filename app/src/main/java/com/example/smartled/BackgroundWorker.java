@@ -1,20 +1,17 @@
 package com.example.smartled;
-import android.content.Context;
+
 import android.os.AsyncTask;
 import android.os.Handler;
-import android.widget.Toast;
-import android.widget.ImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.lang.ref.WeakReference;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,7 +19,7 @@ import java.util.regex.Pattern;
 public class BackgroundWorker extends AsyncTask <String, Void, String> {
     private final static Double WARNING_THRESHOLD = 11.0;
     private final static Double SWITCH_OFF_THRESHOLD = 20.0;
-    String json_url;
+    String json_url, url, user, pass;
 
     public AsyncResponse delegate = null;
 
@@ -31,15 +28,19 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     }
 
     @Override
-    protected void onPreExecute() {
-      json_url = "http://192.168.0.151/plugwise.php";
+    protected void onPreExecute()
+    {
+      //json_url = "http://192.168.0.111/plugwise.php";
+        url = "jdbc:mysql//192.168.0.151:3306/power_consumption";
+        user = "root";
+        pass = "12345";
     }
 
     @Override
     protected String doInBackground(String... params) {
         String result = "";
         try {
-            URL url = new URL(json_url);
+            /*URL url = new URL(json_url);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
             InputStream inputStream = httpURLConnection.getInputStream();
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
@@ -52,7 +53,17 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             bufferedReader.close();
             inputStream.close();;
             httpURLConnection.disconnect();
-            result = stringBuilder.toString();
+            result = stringBuilder.toString();*/
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection(url, user, pass);
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery("select * from plugwise1");
+            ResultSetMetaData rsnd = rs.getMetaData();
+
+            while(rs.next()) {
+                ;
+            }
         }
         catch (Exception e){
           return new String("Exeption:" + e.getMessage());
@@ -88,8 +99,11 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
                 JSONObject led = ledData.getJSONObject(ledData.length()- 1);
                 Double act_pow = (Double) led.getDouble("power");
                 //String date = ledData.("date_time");
+
                 line = "Actual Power1: " + act_pow + "\n";
                 //MainActivity.plugwiseData.setText(line);
+
+
                 if(act_pow < WARNING_THRESHOLD) {
                     //SocketAsyncTask led_off = new SocketAsyncTask();
                     //led_off.execute("0");
