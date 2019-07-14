@@ -23,7 +23,7 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     String url, user, pass;
 
     ArrayList<Double> actual_power_1 = new ArrayList<Double>();
-    ArrayList<String> actual_power_2 = new ArrayList<String>();
+    ArrayList<Double> actual_power_2 = new ArrayList<Double>();
 
     public AsyncResponse delegate = null;
 
@@ -48,18 +48,20 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, user, pass);
 
-            Statement st = con.createStatement();
-            ResultSet rs1 = st.executeQuery("select * from plugwise1");
-            //ResultSet rs2 = st.executeQuery("select * from plugwise2");
-            ResultSetMetaData rsmd1 = rs1.getMetaData();
+            Statement st1 = con.createStatement();
+            Statement st2 = con.createStatement();
+            ResultSet rs1 = st1.executeQuery("select * from plugwise1");
+            ResultSet rs2 = st2.executeQuery("select * from plugwise2");
+            ResultSetMetaData rsmd11 = rs1.getMetaData();
+            ResultSetMetaData rsmd12 = rs1.getMetaData();
 
             while(rs1.next()) {
                 actual_power_1.add(rs1.getDouble(3));
             }
 
-            /*while(rs2.next()) {
-                actual_power_2.add(rs1.getString(3));
-            }*/
+            while(rs2.next()) {
+                actual_power_2.add(rs2.getDouble(3));
+            }
         }
         catch (Exception e){
           return new String("Exeption:" + e.getMessage());
@@ -71,18 +73,30 @@ public class BackgroundWorker extends AsyncTask <String, Void, String> {
     @Override
     protected void onPostExecute(String result) {
 
-        String line = "Actual Power1: " + actual_power_1.get(actual_power_1.size() - 1) + "\n";
+        String line = "Actual Power1: " + actual_power_1.get(actual_power_1.size() - 1) + "\n" +
+                      "Actual Power2: " + actual_power_2.get(actual_power_2.size() - 1) + "\n" ;
         MainActivity.plugwiseData.setText(line);
-        Double last_val = actual_power_1.get(actual_power_1.size() - 1);
+        Double last_val1 = actual_power_1.get(actual_power_1.size() - 1);
+        Double last_val2 = actual_power_2.get(actual_power_2.size() - 1);
 
-        if(last_val < WARNING_THRESHOLD) {
+        if(last_val1 < WARNING_THRESHOLD) {
             //SocketAsyncTask led_off = new SocketAsyncTask();
             //led_off.execute("0");
             delegate.displayLed("green", 1);
-        } else if((last_val >= WARNING_THRESHOLD) && (last_val < SWITCH_OFF_THRESHOLD)){
+        } else if((last_val1 >= WARNING_THRESHOLD) && (last_val1 < SWITCH_OFF_THRESHOLD)){
             delegate.displayLed("red", 1);
         } else {
             delegate.displayLed("white", 1);
+        }
+
+        if(last_val2 < WARNING_THRESHOLD) {
+            //SocketAsyncTask led_off = new SocketAsyncTask();
+            //led_off.execute("0");
+            delegate.displayLed("green", 2);
+        } else if((last_val2 >= WARNING_THRESHOLD) && (last_val2 < SWITCH_OFF_THRESHOLD)){
+            delegate.displayLed("red", 2);
+        } else {
+            delegate.displayLed("white", 2);
         }
 
     }
