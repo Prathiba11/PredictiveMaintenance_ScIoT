@@ -34,7 +34,7 @@ public class PowerRead extends AsyncTask<String, Void, Void> {
         try {
             String g=executeRemoteCommand("pi", "smart@team5", "192.168.0.114", 22, option);
             //Log.d("DDD",g);
-            MainActivity.plugwiseData.setText(option+g);
+            MainActivity.plugwiseData1.setText(option+g);
         }catch (Exception e) {
             e.printStackTrace();
         }

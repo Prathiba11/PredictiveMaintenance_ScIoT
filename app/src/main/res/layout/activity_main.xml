@@ -11,22 +11,55 @@
         android:layout_width="314dp"
         android:layout_height="56dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="23dp"
         android:text="       SmartCFL"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         tools:layout_centerHorizontal="true" />
 
     <TextView
-        android:id="@+id/tv_data"
-        android:layout_width="366dp"
-        android:layout_height="121dp"
+        android:id="@+id/tv_pow2"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="21dp"
-        android:layout_marginTop="135dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="213dp"
         android:textAlignment="center"
         android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_pow1"
+        android:layout_width="361dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="109dp"
+        android:textAlignment="center"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/tv_date1"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="153dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_date2"
+        android:layout_width="148dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="133dp"
+        android:layout_marginTop="257dp"
+        android:textAlignment="center"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/btn_off1"
@@ -74,8 +107,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="135dp"
-        android:layout_marginTop="294dp"
+        android:layout_marginLeft="137dp"
+        android:layout_marginTop="318dp"
         android:text="Fetch Plugwise" />
 
     <ImageView
