@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SecondActivity">
+
+    <Button
+        android:id="@+id/btn_activity"
+        android:layout_width="33dp"
+        android:layout_height="116dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="58dp"
+        android:text="Back"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_cfl2"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="219dp"
+        android:layout_marginTop="58dp"
+        android:text="    Plugwise2"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_cfl1"
+        android:layout_width="149dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="58dp"
+        android:text="    Plugwise1"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/tv_avg1"
+        android:layout_width="347dp"
+        android:layout_height="42dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="242dp"
+        android:text="                Average Power (W)"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_actpow1"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="137dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_actpow2"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="137dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_avgpowhr2"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="309dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_avgpowhr1"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="308dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_avgpowday2"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="417dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_avgpowwk2"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="230dp"
+        android:layout_marginTop="518dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_avgpowwk1"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="525dp"
+        android:textSize="22sp" />
+
+    <TextView
+        android:id="@+id/tv_avgpowday1"
+        android:layout_width="151dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="417dp"
+        android:textSize="22sp" />
+
+</RelativeLayout>

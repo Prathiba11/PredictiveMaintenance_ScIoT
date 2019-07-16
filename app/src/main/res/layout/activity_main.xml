@@ -89,7 +89,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="65dp"
         android:layout_marginTop="382dp"
-        android:text="On1" />
+        android:text="On1"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/btn_on2"
@@ -99,7 +100,8 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="265dp"
         android:layout_marginTop="383dp"
-        android:text="On2" />
+        android:text="On2"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/btn_fetch"
@@ -107,9 +109,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="137dp"
-        android:layout_marginTop="318dp"
-        android:text="Fetch Plugwise" />
+        android:layout_marginLeft="112dp"
+        android:layout_marginTop="317dp"
+        android:text="Fetch Plugwise"
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/img_led1"
@@ -128,5 +131,16 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="234dp"
         android:layout_marginTop="518dp" />
+
+    <Button
+        android:id="@+id/btn_activity2"
+        android:layout_width="33dp"
+        android:layout_height="116dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="58dp"
+        android:layout_marginRight="2dp"
+        android:text="Info"
+        android:textSize="18sp" />
 
 </RelativeLayout>

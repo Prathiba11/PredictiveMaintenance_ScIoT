@@ -19,18 +19,6 @@ public class SocketAsyncTask extends AsyncTask <String, Void, Void> {
     @Override
     protected Void doInBackground(String... strings) {
         int option = Integer.valueOf(strings[0]);
-        /*try {
-            InetAddress inetAddress = InetAddress.getByName(MainActivity.wifiModuleIp);
-            socket = new java.net.Socket(inetAddress, MainActivity.wifiModulePort);
-            DataOutputStream dataOutputStream = new DataOutputStream(socket.getOutputStream());
-            dataOutputStream.writeBytes(led_switch);
-            dataOutputStream.close();
-            socket.close();
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
         try {
             executeRemoteCommand("pi", "smart@team5", "192.168.0.114", 22, option);
         }catch (Exception e) {
